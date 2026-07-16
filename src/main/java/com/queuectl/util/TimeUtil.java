@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Utility for consistent timestamp formatting throughout QueueCTL.
  *
- * <p>All timestamps are stored as ISO-8601 UTC strings in the database.
+ * All timestamps are stored as ISO-8601 UTC strings in the database.
  */
 public final class TimeUtil {
 

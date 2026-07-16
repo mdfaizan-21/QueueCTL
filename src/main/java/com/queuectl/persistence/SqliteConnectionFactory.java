@@ -12,14 +12,12 @@ import java.sql.Statement;
 /**
  * Thread-safe factory for SQLite JDBC connections.
  *
- * <p>Configures connections with:
- * <ul>
- *   <li>WAL (Write-Ahead Logging) mode for concurrent read/write</li>
- *   <li>Busy timeout to handle lock contention</li>
- *   <li>Foreign key enforcement</li>
- * </ul>
+ * Configures connections with:
+ * - WAL (Write-Ahead Logging) mode for concurrent read/write
+ * - Busy timeout to handle lock contention
+ * - Foreign key enforcement
  *
- * <p>Each call to {@link #getConnection()} returns a new connection.
+ * Each call to {@link #getConnection()} returns a new connection.
  * Callers are responsible for closing connections after use.
  */
 public class SqliteConnectionFactory {
@@ -55,7 +53,7 @@ public class SqliteConnectionFactory {
     /**
      * Returns a new configured SQLite connection.
      *
-     * <p>The connection has WAL mode, busy timeout, and foreign keys enabled.
+     * The connection has WAL mode, busy timeout, and foreign keys enabled.
      * Caller is responsible for closing the connection.
      *
      * @return a new JDBC Connection

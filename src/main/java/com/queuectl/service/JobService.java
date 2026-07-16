@@ -15,7 +15,7 @@ import java.util.Optional;
 /**
  * Service layer for job operations.
  *
- * <p>Handles business logic for enqueuing, querying, and managing jobs.
+ * Handles business logic for enqueuing, querying, and managing jobs.
  * Validates input and delegates persistence to {@link JobRepository}.
  */
 public class JobService {

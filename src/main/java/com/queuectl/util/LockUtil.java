@@ -10,11 +10,9 @@ import java.nio.file.Path;
 /**
  * File-based PID lock to prevent multiple worker processes.
  *
- * <p>Creates a lock file containing the current PID. Used by:
- * <ul>
- *   <li>{@code worker start} — acquires lock</li>
- *   <li>{@code worker stop} — reads PID from lock, signals stop, removes lock</li>
- * </ul>
+ * Creates a lock file containing the current PID. Used by:
+ * - {@code worker start} — acquires lock
+ * - {@code worker stop} — reads PID from lock, signals stop, removes lock
  */
 public final class LockUtil {
 

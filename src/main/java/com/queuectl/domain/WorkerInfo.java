@@ -6,12 +6,10 @@ import java.util.Objects;
 /**
  * Represents metadata about a running worker instance.
  *
- * <p>Workers register themselves in the database to enable:
- * <ul>
- *   <li>Heartbeat monitoring (detect stale workers)</li>
- *   <li>Status reporting via CLI commands</li>
- *   <li>Crash recovery (release locks held by dead workers)</li>
- * </ul>
+ * Workers register themselves in the database to enable:
+ * - Heartbeat monitoring (detect stale workers)
+ * - Status reporting via CLI commands
+ * - Crash recovery (release locks held by dead workers)
  */
 public class WorkerInfo {
 

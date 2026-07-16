@@ -8,10 +8,10 @@ import com.queuectl.service.*;
 /**
  * Manual dependency injection container.
  *
- * <p>Wires all components together without a framework.
+ * Wires all components together without a framework.
  * Acts as a simple service locator for CLI commands.
  *
- * <p>Usage:
+ * Usage:
  * <pre>
  *   AppContext ctx = AppContext.initialize();
  *   ctx.jobService().enqueue(job);

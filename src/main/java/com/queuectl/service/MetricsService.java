@@ -18,15 +18,13 @@ import java.util.Map;
 /**
  * Service for computing and reporting job processing metrics.
  *
- * <p>Provides aggregated statistics including:
- * <ul>
- *   <li>Jobs processed (completed count)</li>
- *   <li>Average runtime</li>
- *   <li>Success rate</li>
- *   <li>Retry count</li>
- *   <li>DLQ count</li>
- *   <li>Active worker count</li>
- * </ul>
+ * Provides aggregated statistics including:
+ * - Jobs processed (completed count)
+ * - Average runtime
+ * - Success rate
+ * - Retry count
+ * - DLQ count
+ * - Active worker count
  */
 public class MetricsService {
 

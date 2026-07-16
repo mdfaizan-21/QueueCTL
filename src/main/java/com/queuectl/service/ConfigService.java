@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * Service for managing runtime configuration.
  *
- * <p>Validates configuration keys and values before persisting.
+ * Validates configuration keys and values before persisting.
  */
 public class ConfigService {
 

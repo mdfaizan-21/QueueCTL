@@ -12,16 +12,14 @@ import java.util.List;
 /**
  * Executes database schema migrations in order.
  *
- * <p>Migrations are idempotent DDL statements executed sequentially.
+ * Migrations are idempotent DDL statements executed sequentially.
  * Each migration uses "CREATE TABLE IF NOT EXISTS" for safety on re-runs.
  *
- * <p>Tables created:
- * <ul>
- *   <li><b>jobs</b> — background job queue with all lifecycle fields</li>
- *   <li><b>workers</b> — registered worker instances with heartbeat</li>
- *   <li><b>config</b> — key-value runtime configuration</li>
- *   <li><b>metrics</b> — key-value metrics counters</li>
- * </ul>
+ * Tables created:
+ * - **jobs** — background job queue with all lifecycle fields
+ * - **workers** — registered worker instances with heartbeat
+ * - **config** — key-value runtime configuration
+ * - **metrics** — key-value metrics counters
  */
 public class MigrationRunner {
 
@@ -118,7 +116,7 @@ public class MigrationRunner {
     /**
      * Executes all migrations in a single transaction.
      *
-     * <p>If any migration fails, the entire transaction is rolled back.
+     * If any migration fails, the entire transaction is rolled back.
      *
      * @throws PersistenceException if migration fails
      */

@@ -14,7 +14,7 @@ import java.util.Optional;
 /**
  * SQLite implementation of {@link ConfigRepository}.
  *
- * <p>Uses INSERT OR REPLACE (upsert) for set operations,
+ * Uses INSERT OR REPLACE (upsert) for set operations,
  * ensuring config values can be updated without checking for existence.
  */
 public class SqliteConfigRepository implements ConfigRepository {

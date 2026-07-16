@@ -3,13 +3,11 @@ package com.queuectl.exception;
 /**
  * Exception thrown for worker lifecycle errors.
  *
- * <p>Covers scenarios such as:
- * <ul>
- *   <li>Worker start failure</li>
- *   <li>Worker already running</li>
- *   <li>Worker shutdown failure</li>
- *   <li>Heartbeat update failure</li>
- * </ul>
+ * Covers scenarios such as:
+ * - Worker start failure
+ * - Worker already running
+ * - Worker shutdown failure
+ * - Heartbeat update failure
  */
 public class WorkerException extends QueueCtlException {
 
