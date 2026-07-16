@@ -12,7 +12,7 @@ import java.util.Optional;
 /**
  * Service for Dead Letter Queue operations.
  *
- * <p>Jobs enter the DLQ when they exhaust all retry attempts.
+ * Jobs enter the DLQ when they exhaust all retry attempts.
  * This service allows listing and retrying dead jobs.
  */
 public class DlqService {
@@ -37,7 +37,7 @@ public class DlqService {
     /**
      * Retries a dead job by resetting it to PENDING.
      *
-     * <p>Resets: state → PENDING, attempts → 0, clears error/lock/retry fields.
+     * Resets: state → PENDING, attempts → 0, clears error/lock/retry fields.
      *
      * @param jobId the job ID to retry
      * @throws IllegalArgumentException if job not found or not in DEAD state

@@ -3,7 +3,7 @@ package com.queuectl.domain;
 /**
  * Job priority levels for queue ordering.
  *
- * <p>Jobs with higher priority are dequeued first.
+ * Jobs with higher priority are dequeued first.
  * The numeric weight is used for database sorting (higher = processed first).
  */
 public enum Priority {

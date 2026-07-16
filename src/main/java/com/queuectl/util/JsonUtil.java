@@ -11,15 +11,13 @@ import org.slf4j.LoggerFactory;
 /**
  * Centralized JSON utility using Jackson.
  *
- * <p>Provides a pre-configured singleton {@link ObjectMapper} and
+ * Provides a pre-configured singleton {@link ObjectMapper} and
  * convenience methods for serialization/deserialization.
  *
- * <p>Configuration:
- * <ul>
- *   <li>Java 8 time module registered</li>
- *   <li>Unknown properties ignored (forward compatibility)</li>
- *   <li>Timestamps written as strings, not numeric</li>
- * </ul>
+ * Configuration:
+ * - Java 8 time module registered
+ * - Unknown properties ignored (forward compatibility)
+ * - Timestamps written as strings, not numeric
  */
 public final class JsonUtil {
 

@@ -5,7 +5,7 @@ import picocli.CommandLine.Command;
 /**
  * CLI command: queuectl worker start|stop
  *
- * <p>Placeholder — full worker implementation comes in Phase 6.
+ * Placeholder — full worker implementation comes in Phase 6.
  */
 @Command(name = "worker", description = "Manage background workers.",
          subcommands = {

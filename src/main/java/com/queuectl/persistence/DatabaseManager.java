@@ -12,7 +12,7 @@ import java.sql.Statement;
 /**
  * Central manager for database lifecycle: initialization, migrations, and health checks.
  *
- * <p>Usage:
+ * Usage:
  * <pre>
  *   SqliteConnectionFactory factory = new SqliteConnectionFactory("queuectl.db");
  *   DatabaseManager dbManager = new DatabaseManager(factory);
@@ -20,12 +20,10 @@ import java.sql.Statement;
  *   // Database is now ready for use
  * </pre>
  *
- * <p>The manager ensures:
- * <ul>
- *   <li>Database file is created if it doesn't exist</li>
- *   <li>Schema migrations are applied</li>
- *   <li>Connection health is verifiable</li>
- * </ul>
+ * The manager ensures:
+ * - Database file is created if it doesn't exist
+ * - Schema migrations are applied
+ * - Connection health is verifiable
  */
 public class DatabaseManager {
 

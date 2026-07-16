@@ -5,14 +5,12 @@ import java.util.Objects;
 /**
  * Represents a key-value configuration entry stored in the database.
  *
- * <p>Used for runtime-configurable settings such as:
- * <ul>
- *   <li>max-retries: maximum retry attempts before DLQ</li>
- *   <li>backoff-base: base for exponential backoff calculation</li>
- *   <li>poll-interval: worker polling interval in milliseconds</li>
- *   <li>job-timeout: default job execution timeout in seconds</li>
- *   <li>worker-heartbeat: heartbeat interval in seconds</li>
- * </ul>
+ * Used for runtime-configurable settings such as:
+ * - max-retries: maximum retry attempts before DLQ
+ * - backoff-base: base for exponential backoff calculation
+ * - poll-interval: worker polling interval in milliseconds
+ * - job-timeout: default job execution timeout in seconds
+ * - worker-heartbeat: heartbeat interval in seconds
  */
 public class Config {
 

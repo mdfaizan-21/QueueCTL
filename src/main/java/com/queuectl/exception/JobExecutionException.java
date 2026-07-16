@@ -3,13 +3,11 @@ package com.queuectl.exception;
 /**
  * Exception thrown when a job fails to execute.
  *
- * <p>Covers scenarios such as:
- * <ul>
- *   <li>Command execution failure (non-zero exit code)</li>
- *   <li>Execution timeout exceeded</li>
- *   <li>Process start failure</li>
- *   <li>Invalid command format</li>
- * </ul>
+ * Covers scenarios such as:
+ * - Command execution failure (non-zero exit code)
+ * - Execution timeout exceeded
+ * - Process start failure
+ * - Invalid command format
  */
 public class JobExecutionException extends QueueCtlException {
 

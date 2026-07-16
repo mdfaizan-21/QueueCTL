@@ -3,13 +3,11 @@ package com.queuectl.exception;
 /**
  * Exception thrown for database/persistence layer errors.
  *
- * <p>Covers scenarios such as:
- * <ul>
- *   <li>Database connection failure</li>
- *   <li>Schema migration failure</li>
- *   <li>SQL execution failure</li>
- *   <li>Transaction failure</li>
- * </ul>
+ * Covers scenarios such as:
+ * - Database connection failure
+ * - Schema migration failure
+ * - SQL execution failure
+ * - Transaction failure
  */
 public class PersistenceException extends QueueCtlException {
 

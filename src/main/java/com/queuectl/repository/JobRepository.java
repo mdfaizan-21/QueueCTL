@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * Repository interface for Job persistence operations.
  *
- * <p>Defines the contract for storing, retrieving, updating, and
+ * Defines the contract for storing, retrieving, updating, and
  * atomically locking jobs. Implementations must ensure thread-safety
  * for concurrent worker access.
  */
@@ -49,14 +49,12 @@ public interface JobRepository {
     /**
      * Atomically fetches the next eligible job and locks it for a worker.
      *
-     * <p>Eligible jobs are PENDING with either:
-     * <ul>
-     *   <li>No scheduled retry (next_retry_at IS NULL)</li>
-     *   <li>Retry time has passed (next_retry_at &lt;= now)</li>
-     *   <li>No delayed start (run_at IS NULL) or run_at &lt;= now</li>
-     * </ul>
-     *
-     * <p>Jobs are ordered by priority DESC, created_at ASC.
+     * Eligible jobs are PENDING with either:
+         * - No scheduled retry (next_retry_at IS NULL)
+     * - Retry time has passed (next_retry_at &lt;= now)
+     * - No delayed start (run_at IS NULL) or run_at &lt;= now
+         *
+     * Jobs are ordered by priority DESC, created_at ASC.
      * The selected job is atomically set to PROCESSING with the given worker ID.
      *
      * @param workerId the ID of the worker acquiring the lock

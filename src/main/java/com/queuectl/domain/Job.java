@@ -9,18 +9,16 @@ import java.util.Objects;
 /**
  * Core domain entity representing a background job in the queue.
  *
- * <p>A Job encapsulates:
- * <ul>
- *   <li>Identity: unique id</li>
- *   <li>Work: the shell command to execute</li>
- *   <li>Lifecycle: state, attempts, retry metadata</li>
- *   <li>Scheduling: priority, runAt, nextRetryAt</li>
- *   <li>Locking: lockedBy worker id, lockedAt timestamp</li>
- *   <li>Results: output (stdout), error (stderr)</li>
- *   <li>Auditing: createdAt, updatedAt</li>
- * </ul>
+ * A Job encapsulates:
+ * - Identity: unique id
+ * - Work: the shell command to execute
+ * - Lifecycle: state, attempts, retry metadata
+ * - Scheduling: priority, runAt, nextRetryAt
+ * - Locking: lockedBy worker id, lockedAt timestamp
+ * - Results: output (stdout), error (stderr)
+ * - Auditing: createdAt, updatedAt
  *
- * <p>This class is designed for Jackson serialization and SQLite persistence.
+ * This class is designed for Jackson serialization and SQLite persistence.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Job {

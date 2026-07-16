@@ -3,12 +3,10 @@ package com.queuectl.exception;
 /**
  * Exception thrown for configuration errors.
  *
- * <p>Covers scenarios such as:
- * <ul>
- *   <li>Invalid configuration key</li>
- *   <li>Invalid configuration value</li>
- *   <li>Configuration read/write failure</li>
- * </ul>
+ * Covers scenarios such as:
+ * - Invalid configuration key
+ * - Invalid configuration value
+ * - Configuration read/write failure
  */
 public class ConfigException extends QueueCtlException {
 

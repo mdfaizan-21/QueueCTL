@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Service for managing job retries with exponential backoff.
  *
- * <p>Backoff formula: delay = backoffBase ^ attempts (in seconds).
+ * Backoff formula: delay = backoffBase ^ attempts (in seconds).
  * Example with base=2: attempt 1 → 2s, attempt 2 → 4s, attempt 3 → 8s.
  */
 public class RetryService {

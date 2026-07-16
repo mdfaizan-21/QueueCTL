@@ -17,13 +17,11 @@ import java.util.Optional;
 /**
  * SQLite implementation of {@link JobRepository}.
  *
- * <p>Key design decisions:
- * <ul>
- *   <li>Uses optimistic locking via atomic UPDATE for {@link #fetchAndLock}</li>
- *   <li>Priority ordering uses CASE expression mapping HIGH/MEDIUM/LOW to 3/2/1</li>
- *   <li>All timestamps stored as ISO-8601 UTC strings</li>
- *   <li>Each method obtains and releases its own connection (no shared state)</li>
- * </ul>
+ * Key design decisions:
+ * - Uses optimistic locking via atomic UPDATE for {@link #fetchAndLock}
+ * - Priority ordering uses CASE expression mapping HIGH/MEDIUM/LOW to 3/2/1
+ * - All timestamps stored as ISO-8601 UTC strings
+ * - Each method obtains and releases its own connection (no shared state)
  */
 public class SqliteJobRepository implements JobRepository {
 
@@ -121,14 +119,14 @@ public class SqliteJobRepository implements JobRepository {
     /**
      * Atomically fetches the next eligible PENDING job and locks it.
      *
-     * <p>This is the core of the duplicate-prevention strategy. The SQL:
+     * This is the core of the duplicate-prevention strategy. The SQL:
      * <ol>
-     *   <li>Selects the highest-priority, oldest eligible PENDING job</li>
-     *   <li>Updates it to PROCESSING with the worker's lock in a single statement</li>
-     *   <li>Returns the updated row</li>
+     * - Selects the highest-priority, oldest eligible PENDING job
+     * - Updates it to PROCESSING with the worker's lock in a single statement
+     * - Returns the updated row
      * </ol>
      *
-     * <p>Eligibility: state=PENDING AND (next_retry_at IS NULL OR next_retry_at &lt;= now)
+     * Eligibility: state=PENDING AND (next_retry_at IS NULL OR next_retry_at &lt;= now)
      * AND (run_at IS NULL OR run_at &lt;= now).
      */
     @Override

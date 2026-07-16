@@ -3,7 +3,7 @@ package com.queuectl.domain;
 /**
  * Represents the lifecycle states of a job in the queue system.
  *
- * <p>State transitions:
+ * State transitions:
  * <pre>
  *   PENDING → PROCESSING → COMPLETED
  *                        → FAILED → PENDING (retry)
