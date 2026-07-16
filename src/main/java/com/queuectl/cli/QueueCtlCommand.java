@@ -14,7 +14,14 @@ import picocli.CommandLine.Command;
     version = "QueueCTL 1.0.0",
     description = "A production-grade CLI background job queue system.",
     subcommands = {
-        CommandLine.HelpCommand.class
+        CommandLine.HelpCommand.class,
+        EnqueueCommand.class,
+        ListCommand.class,
+        StatusCommand.class,
+        ConfigCommand.class,
+        DlqCommand.class,
+        MetricsCommand.class,
+        WorkerCommand.class
     }
 )
 public class QueueCtlCommand implements Runnable {
