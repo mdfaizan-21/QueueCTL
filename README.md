@@ -1,5 +1,7 @@
 # QueueCTL
 
+[🎥 Watch the CLI Demo Video](https://drive.google.com/file/d/1s-BlyXOnrlXTQWJd_GOcNayZyJV273Nw/view?usp=sharing)
+
 A production-grade CLI background job queue system built in Java 21 — a simplified version of Sidekiq/Celery/BullMQ demonstrating strong backend engineering, concurrency handling, reliability, persistence, and clean architecture.
 
 ---
@@ -159,7 +161,7 @@ mvn clean test
 All commands use the fat JAR at `target/queuectl-1.0.0.jar`:
 
 ```bash
-alias queuectl="java -jar target/queuectl-1.0.0.jar"
+alias queuectl="java --enable-native-access=ALL-UNNAMED -jar target/queuectl-1.0.0.jar"
 ```
 
 ### Enqueue Jobs

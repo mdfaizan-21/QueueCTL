@@ -30,5 +30,8 @@
 
     <!-- Suppress noisy SQLite driver logs -->
     <logger name="org.sqlite" level="WARN" />
+        <!-- Suppress INFO logs from database initialization -->
+    <logger name="com.queuectl.persistence" level="WARN" />
+
 
 </configuration>
