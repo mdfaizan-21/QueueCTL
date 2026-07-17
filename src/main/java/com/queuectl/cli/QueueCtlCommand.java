@@ -16,6 +16,7 @@ import picocli.CommandLine.Command;
     subcommands = {
         CommandLine.HelpCommand.class,
         EnqueueCommand.class,
+        ShowCommand.class,
         ListCommand.class,
         StatusCommand.class,
         ConfigCommand.class,
