@@ -47,7 +47,20 @@ public final class ProcessUtil {
 
             Process process = pb.start();
 
-            // Capture stdout and stderr in parallel-safe way
+            // Wait for completion with timeout FIRST — reading stdout before
+            // waitFor blocks the calling thread until the process ends, which
+            // defeats the timeout.
+            boolean completed = process.waitFor(timeoutSeconds, TimeUnit.SECONDS);
+            long durationMs = System.currentTimeMillis() - startTime;
+
+            if (!completed) {
+                process.destroyForcibly();
+                process.waitFor(2, TimeUnit.SECONDS); // allow cleanup
+                throw new JobExecutionException(
+                        "Command timed out after " + timeoutSeconds + "s: " + command);
+            }
+
+            // Read output AFTER process completes (safe, won't block)
             String stdout;
             String stderr;
             try (BufferedReader stdoutReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -55,15 +68,6 @@ public final class ProcessUtil {
 
                 stdout = stdoutReader.lines().collect(Collectors.joining("\n"));
                 stderr = stderrReader.lines().collect(Collectors.joining("\n"));
-            }
-
-            boolean completed = process.waitFor(timeoutSeconds, TimeUnit.SECONDS);
-            long durationMs = System.currentTimeMillis() - startTime;
-
-            if (!completed) {
-                process.destroyForcibly();
-                throw new JobExecutionException(
-                        "Command timed out after " + timeoutSeconds + "s: " + command);
             }
 
             int exitCode = process.exitValue();
@@ -81,3 +85,4 @@ public final class ProcessUtil {
         }
     }
 }
+
